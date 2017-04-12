@@ -136,6 +136,7 @@ public class DNSVpnService extends VpnService {
                                 }
                             });
                             initNotification();
+                            if(notificationBuilder != null)notificationBuilder.setWhen(System.currentTimeMillis());
                             dns1 = Preferences.getString(DNSVpnService.this, "dns1", "8.8.8.8");
                             dns2 = Preferences.getString(DNSVpnService.this, "dns1", "8.8.4.4");
                             dns1_v6 = Preferences.getString(DNSVpnService.this, "dns1-v6", "2001:4860:4860::8888");
