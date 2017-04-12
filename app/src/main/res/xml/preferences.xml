@@ -29,7 +29,14 @@
         android:summary="@string/summary_auto_mobile"
         android:title="@string/title_auto_mobile" />
 
-    <Preference android:key="contact_dev" android:title="@string/contact_developer"/>
+    <Preference
+        android:key="full_version"
+        android:summary="@string/summary_full_version"
+        android:title="@string/full_version" />
+
+    <Preference
+        android:key="contact_dev"
+        android:title="@string/contact_developer" />
 
     <Preference android:key="version" />
 </PreferenceScreen>

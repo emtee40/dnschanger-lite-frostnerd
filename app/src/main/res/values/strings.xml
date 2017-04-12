@@ -11,9 +11,9 @@
     <string name="information">Information</string>
     <string name="settings">Settings</string>
     <string name="title_notification">Notification</string>
-    <string name="summary_notification">Show a notification when the VPN is running</string>
+    <string name="summary_notification">Show a notification when DNSChanger is running</string>
     <string name="title_start_boot">Start on boot</string>
-    <string name="summary_start_boot">Automatically start the VPN when your phone is turned on</string>
+    <string name="summary_start_boot">Automatically start DNSChanger when your phone is turned on</string>
     <string name="subtitle_configuring">Configuring [[x]]</string>
     <string name="menu_title_configure_v4">Configure IPv4</string>
     <string name="menu_title_configure_v6">Configure IPv6</string>
@@ -42,4 +42,6 @@
     <string name="vpn_error_explain">On some Android versions (4.4, some 5.0 versions) and custom ROMs the underlying VPN structure doesn\'t work and leads to crashes.  The App crashed unexpectedly which most likely indicates that your phone doesn\'t support how this app operates (The error could be temporary aswell). If that\'s the case you could help me by sending the crash report, but sadly this app doesn\'t work on your device.</string>
     <string name="contact_developer">Contact developer</string>
     <string name="summary_version" translatable="false">Version [[version]] ([[code]]) \n\n© Daniel Wolf 2017 All rights reserved</string>
+    <string name="full_version">Full version</string>
+    <string name="summary_full_version">Download full version from store (Free)</string>
 </resources>
