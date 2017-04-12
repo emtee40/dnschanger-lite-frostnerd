@@ -11,10 +11,10 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.frostnerd.dnschanger.activities.MainActivity">
+    tools:context="com.frostnerd.dnschangerlight.MainActivity">
 
 
-    <com.frostnerd.utils.design.MaterialEditText
+    <com.frostnerd.dnschangerlight.API.MaterialEditText
         android:id="@+id/met_dns1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -22,7 +22,6 @@
         app:cardColor="#42A5F5"
         app:cardStrokeColor="#42A5F5"
         app:image="@drawable/ic_language"
-        app:indicatorVisibilityWhenUnused="gone"
         app:revealDelay="0"
         app:revealType="revealInstant">
 
@@ -35,19 +34,17 @@
             android:inputType="numberDecimal"
             android:text="8.8.8.8"
             android:textColor="#FFF" />
-    </com.frostnerd.utils.design.MaterialEditText>
+    </com.frostnerd.dnschangerlight.API.MaterialEditText>
 
 
-    <com.frostnerd.utils.design.MaterialEditText
+    <com.frostnerd.dnschangerlight.API.MaterialEditText
         android:id="@+id/met_dns2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:allowCollapse="false"
         app:cardColor="#42A5F5"
         app:cardStrokeColor="#2196F3"
-        android:paddingTop="5dp"
         app:image="@drawable/ic_language"
-        app:indicatorVisibilityWhenUnused="gone"
         app:revealDelay="0"
         app:revealType="revealInstant">
 
@@ -60,7 +57,7 @@
             android:inputType="numberDecimal"
             android:text="8.8.4.4"
             android:textColor="#FFF" />
-    </com.frostnerd.utils.design.MaterialEditText>
+    </com.frostnerd.dnschangerlight.API.MaterialEditText>
 
     <LinearLayout
         android:id="@+id/default_dns_view"
@@ -68,7 +65,6 @@
         android:layout_height="wrap_content"
         android:background="#42A5F5"
         android:clickable="true"
-        android:layout_marginTop="15dp"
         android:onClick="openDefaultDNSDialog"
         android:padding="10dp">
 

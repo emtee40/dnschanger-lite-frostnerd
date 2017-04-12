@@ -1,142 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <PreferenceCategory android:title="@string/notification">
-        <CheckBoxPreference
-            android:id="@+id/setting_show_notification"
-            android:defaultValue="false"
-            android:key="setting_show_notification"
-            android:summary="@string/summary_notification"
-            android:title="@string/title_notification" />
+    <CheckBoxPreference
+        android:id="@+id/setting_show_notification"
+        android:key="setting_show_notification"
+        android:defaultValue="false"
+        android:summary="@string/summary_notification"
+        android:title="@string/title_notification" />
 
-        <CheckBoxPreference
-            android:id="@+id/setting_show_used_dns"
-            android:defaultValue="false"
-            android:dependency="setting_show_notification"
-            android:key="show_used_dns"
-            android:summary="@string/summary_show_used_dns"
-            android:title="@string/title_show_used_dns" />
-    </PreferenceCategory>
+    <CheckBoxPreference
+        android:id="@+id/setting_start_boot"
+        android:key="setting_start_boot"
+        android:defaultValue="false"
+        android:summary="@string/summary_start_boot"
+        android:title="@string/title_start_boot" />
 
-    <PreferenceCategory
-        android:key="automation"
-        android:title="@string/title_automation">
-        <Preference android:key="warn_automation_tasker" />
-        <CheckBoxPreference
-            android:id="@+id/setting_start_boot"
-            android:defaultValue="false"
-            android:key="setting_start_boot"
-            android:summary="@string/summary_start_boot"
-            android:title="@string/title_start_boot" />
+    <CheckBoxPreference
+        android:id="@+id/setting_auto_wifi"
+        android:key="setting_auto_wifi"
+        android:defaultValue="false"
+        android:summary="@string/summary_auto_wifi"
+        android:title="@string/title_auto_wifi" />
 
-        <CheckBoxPreference
-            android:id="@+id/setting_auto_wifi"
-            android:defaultValue="false"
-            android:key="setting_auto_wifi"
-            android:summary="@string/summary_auto_wifi"
-            android:title="@string/title_auto_wifi" />
-
-        <CheckBoxPreference
-            android:id="@+id/setting_auto_mobile"
-            android:defaultValue="false"
-            android:key="setting_auto_mobile"
-            android:summary="@string/summary_auto_mobile"
-            android:title="@string/title_auto_mobile" />
-
-        <CheckBoxPreference
-            android:id="@+id/setting_auto_disable"
-            android:defaultValue="false"
-            android:key="setting_disable_netchange"
-            android:summary="@string/summary_disable_network_change"
-            android:title="@string/title_disable_network_change" />
-
-        <CheckBoxPreference
-            android:id="@+id/setting_auto_pause"
-            android:checked="false"
-            android:defaultValue="false"
-            android:enabled="false"
-            android:key="auto_pause"
-            android:summary="@string/summary_auto_pause"
-            android:title="@string/title_auto_pause" />
-
-        <Preference
-            android:dependency="auto_pause"
-            android:key="autopause_appselect"
-            android:title="@string/title_autopause_apps" />
-
-        <Preference
-            android:key="remove_usage_data"
-            android:summary="@string/summary_remove_usage_data"
-            android:title="@string/title_remove_usage_data" />
-    </PreferenceCategory>
-    <PreferenceCategory android:title="@string/title_category_pin">
-        <CheckBoxPreference
-            android:defaultValue="false"
-            android:key="setting_pin_enabled"
-            android:summary="@string/summary_pin"
-            android:title="@string/title_pin" />
-        <CheckBoxPreference
-            android:dependency="setting_pin_enabled"
-            android:key="pin_app"
-            android:summary="@string/summary_pin_app"
-            android:title="@string/title_pin_app" />
-        <CheckBoxPreference
-            android:dependency="setting_pin_enabled"
-            android:key="pin_notification"
-            android:summary="@string/summary_pin_notification"
-            android:title="@string/title_pin_notification" />
-        <CheckBoxPreference
-            android:dependency="setting_pin_enabled"
-            android:key="pin_tile"
-            android:summary="@string/summary_pin_tile"
-            android:title="@string/title_pin_tile" />
-        <EditTextPreference
-            android:dependency="setting_pin_enabled"
-            android:key="pin_value"
-            android:summary="@string/summary_pin_value"
-            android:title="@string/title_pin_value" />
-    </PreferenceCategory>
-    <!--<PreferenceCategory android:title="@string/title_import_export">
-        <Preference
-            android:key="export_settings"
-            android:summary="@string/summary_export_settings"
-            android:title="@string/title_export_settings" />
-
-        <Preference
-            android:key="import_settings"
-            android:summary="@string/summary_import_settings"
-            android:title="@string/title_import_settings" />
-    </PreferenceCategory>-->
-    <PreferenceCategory android:title="@string/title_general">
-        <Preference
-            android:key="setting_info"
-            android:title="@string/title_info" />
-        <Preference
-            android:key="contact_dev"
-            android:title="@string/contact_developer" />
-
-        <Preference
-            android:key="share_app"
-            android:summary="@string/summary_share_app"
-            android:title="@string/title_share_app" />
-
-        <SwitchPreference
-            android:key="device_admin"
-            android:summary="@string/summary_device_admin_activate"
-            android:title="@string/title_device_admin" />
-
-        <Preference android:key="placeholder_version" />
-    </PreferenceCategory>
-
-    <PreferenceCategory android:title="@string/title_debug_category" android:key="debug_category">
-        <SwitchPreference
-            android:key="debug"
-            android:summary="@string/summary_debug"
-            android:title="@string/title_debug" />
-
-        <Preference
-            android:key="send_debug"
-            android:summary="@string/summary_send_debug"
-            android:title="@string/title_send_debug" />
-    </PreferenceCategory>
+    <CheckBoxPreference
+        android:id="@+id/setting_auto_mobile"
+        android:key="setting_auto_mobile"
+        android:defaultValue="false"
+        android:summary="@string/summary_auto_mobile"
+        android:title="@string/title_auto_mobile" />
 </PreferenceScreen>

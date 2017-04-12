@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/DnsChanger.iml" filepath="$PROJECT_DIR$/DnsChanger.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DnsChangerLight.iml" filepath="$PROJECT_DIR$/DnsChangerLight.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/AndroidUtils/library/library.iml" filepath="$PROJECT_DIR$/AndroidUtils/library/library.iml" />
     </modules>
