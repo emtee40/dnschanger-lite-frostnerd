@@ -19,9 +19,27 @@ import java.util.regex.Pattern;
  */
 public class API {
     public static final String BROADCAST_SERVICE_STATUS_CHANGE = "com.frostnerd.dnschanger.VPN_SERVICE_CHANGE";
+    public static final String BROADCAST_SERVICE_STATE_REQUEST = "com.frostnerd.dnschanger.VPN_STATE_CHANGE";
     private static final SecureRandom random = new SecureRandom();
     private static final Pattern ipv4Pattern = Pattern.compile("^(([01]?\\d\\d?|2[0-4]\\d|25[0-5])\\.){3}([01]?\\d\\d?|2[0-4]\\d|25[0-5])$"),
             domainPattern = Pattern.compile("^(([a-zA-Z]{1})|([a-zA-Z]{1}[a-zA-Z]{1})|([a-zA-Z]{1}[0-9]{1})|([0-9]{1}[a-zA-Z]{1})|([a-zA-Z0-9][a-zA-Z0-9-_]{1,61}[a-zA-Z0-9]))\\.([a-zA-Z]{2,6}|[a-zA-Z0-9-]{2,30}\\.[a-zA-Z]{2,3})$");
+
+    public static String randomLocalIPv6Address(){
+        String prefix = randomIPv6LocalPrefix();
+        for(int i = 0; i < 5;i++) prefix += ":" + randomIPv6Block(16,false);
+        return prefix;
+    }
+
+    private static String randomIPv6LocalPrefix(){
+        return "fd" + randomIPv6Block(8,true) + ":" + randomIPv6Block(16,false) + ":" + randomIPv6Block(16,false);
+    }
+
+    private static String randomIPv6Block(int bits, boolean leading_zeros){
+        String hex = Long.toHexString((long)Math.floor(Math.random()*Math.pow(2,bits)));
+        if(!leading_zeros || hex.length() == bits/4);
+        hex = "0000".substring(0, bits/4 - hex.length()) + hex;
+        return hex;
+    }
 
     public static boolean checkVPNServiceRunning(Context c){
         ActivityManager am = (ActivityManager)c.getSystemService(Context.ACTIVITY_SERVICE);

@@ -268,6 +268,7 @@ public class MainActivity extends AppCompatActivity {
         vpnRunning = API.checkVPNServiceRunning(this);
         setIndicatorState(vpnRunning);
         registerReceiver(serviceStateReceiver, new IntentFilter(API.BROADCAST_SERVICE_STATUS_CHANGE));
+        sendBroadcast(new Intent(API.BROADCAST_SERVICE_STATE_REQUEST));
     }
 
     @Override

@@ -38,4 +38,8 @@
     <string name="dont_ask_again">Nicht erneut fragen</string>
     <string name="cancel">Abbrechen</string>
     <string name="ok">ok</string>
+    <string name="error">Fehler</string>
+    <string name="send_crash_report">Absturzbericht senden</string>
+    <string name="vpn_error_explain">Bei einigen Android Versionen (4.4, einige wenige 5.0 Versionen) und Custom ROMS wird die dieser App zu Grund liegende VPN-Struktur nicht unterstützt, was zu Abstürzen führt.  Diese App ist unerwartet abgestürzt, was höchstwahrscheinlich darauf hindeutet, dass den Gerät diese App nicht unterstützt (Es muss es allerdings nicht zwangsläufig bedeuten). Sollte dies der Fall sein, könnest du mir helfen, indem du mir den Fehlerbericht sendest, aber leider funktioniert diese App auf deinem Gerät nicht.</string>
+    <string name="contact_developer">Entwickler kontaktieren</string>
 </resources>

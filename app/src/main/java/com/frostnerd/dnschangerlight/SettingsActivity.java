@@ -1,5 +1,8 @@
 package com.frostnerd.dnschangerlight;
 
+import android.content.Intent;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.preference.Preference;
 import android.view.MenuItem;
@@ -22,6 +25,21 @@ public class SettingsActivity extends AppCompatPreferenceActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         findPreference("setting_start_boot").setOnPreferenceChangeListener(changeListener);
         findPreference("setting_show_notification").setOnPreferenceChangeListener(changeListener);
+        findPreference("version").setSummary(getString(R.string.summary_version).replace("[[version]]", BuildConfig.VERSION_NAME).replace("[[code]]", BuildConfig.VERSION_CODE + ""));
+        findPreference("contact_dev").setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+            @Override
+            public boolean onPreferenceClick(Preference preference) {
+                Intent emailIntent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts(
+                        "mailto","support@frostnerd.com", null));
+                String body = "\n\n\n\n\n\n\nSystem:\nApp version: " + BuildConfig.VERSION_CODE + " (" + BuildConfig.VERSION_NAME + ")\n"+
+                        "Android: " + Build.VERSION.SDK_INT + " (" + Build.VERSION.RELEASE + " - " + Build.VERSION.CODENAME + ")";
+                emailIntent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.app_name));
+                emailIntent.putExtra(Intent.EXTRA_EMAIL, "support@frostnerd.com");
+                emailIntent.putExtra(Intent.EXTRA_TEXT, body);
+                startActivity(Intent.createChooser(emailIntent, getString(R.string.contact_developer)));
+                return true;
+            }
+        });
     }
 
     @Override
@@ -37,6 +55,9 @@ public class SettingsActivity extends AppCompatPreferenceActivity {
         @Override
         public boolean onPreferenceChange(Preference preference, Object newValue) {
             Preferences.put(SettingsActivity.this,preference.getKey(),newValue);
+            if(preference.getKey().equalsIgnoreCase("setting_show_notification")){
+                startService(new Intent(SettingsActivity.this, DNSVpnService.class));
+            }
             return true;
         }
     };
